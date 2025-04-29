@@ -5,6 +5,10 @@ on:
         branches:
             - watch_list
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
     load:
         runs-on: macOS
@@ -12,7 +16,8 @@ jobs:
           - uses: actions/checkout@v4
 
           - name: print
-            run: cat STOCKS
+            run: |
+              cat STOCKS
 
           
           
