@@ -3,9 +3,16 @@ name: Generate README
 on:
     push:
         branches:
-            - main
+            - watch_list
 
 jobs:
     load:
         runs-on: macOS
-        
+        steps:
+          - uses: actions/checkout@v4
+
+          - name: print
+            run: cat STOCKS
+
+          
+          
