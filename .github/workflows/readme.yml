@@ -1,24 +1,27 @@
 name: Generate README
 
 on:
-    push:
-        branches:
-            - watch_list
-
+  push:
+    branches:
+      - watch_list
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  
 permissions:
   contents: write
   pull-requests: write
 
 jobs:
-    load:
-        runs-on: macOS
-        steps:
-          - uses: actions/checkout@v4
+  load:
+    runs-on: macOS
+      steps:
+      - uses: actions/checkout@v4
 
-          - name: print
-            run: |
-              cat STOCKS | sort -o STOCKS
-              git add .
-              git commit -m "Sort"
-              git push ${{ github.ref_name }}
+      - name: print
+        run: |
+          cat STOCKS | sort -o STOCKS
+          git remote set-url --push origin https://gleatd01:$GITHUB_TOKEN@github.com/buzzedtop/stocks/
+          git add .
+          git commit -m "Sort"
+          git push ${{ github.ref_name }}
               
