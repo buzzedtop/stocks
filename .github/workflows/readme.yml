@@ -14,7 +14,7 @@ permissions:
 jobs:
   load:
     runs-on: macOS
-      steps:
+    steps:
       - uses: actions/checkout@v4
 
       - name: print
