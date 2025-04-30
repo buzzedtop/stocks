@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - watch_list
+    paths:
+      - STOCKS
+      
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   
