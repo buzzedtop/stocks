@@ -23,5 +23,5 @@ jobs:
           git remote set-url --push origin https://gleatd01:$GITHUB_TOKEN@github.com/buzzedtop/stocks/
           git add .
           git commit -m "Sort"
-          git push ${{ github.ref_name }}
+          git push
               
