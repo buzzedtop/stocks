@@ -18,3 +18,4 @@ jobs:
           - name: print
             run: |
               cat STOCKS | sort -o STOCKS
+              sort -c STOCKS
